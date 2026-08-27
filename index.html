@@ -15,10 +15,15 @@
       <!-- Định nghĩa Marker mặc định tên là "hiro" -->
       <a-marker preset="hiro">
         
-        <!-- 1. Khối lập phương màu hồng quay tròn -->
-        <a-box position="-0.5 0.5 0" material="color: #ec4899;" 
-               animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
-        </a-box>
+        <a-assets>
+          <!-- Nạp file mô hình 3D -->
+          <a-asset-item id="myModel" src="ten_file_mo_hinh.glb"></a-asset-item>
+        </a-assets>
+        
+        <a-marker preset="hiro">
+          <!-- Hiển thị mô hình 3D tại vị trí Marker -->
+          <a-entity gltf-model="#myModel" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
+        </a-marker>
 
         <!-- 2. Khối cầu màu xanh lam -->
         <a-sphere position="0.6 0.5 0" radius="0.4" material="color: #3b82f6;">
