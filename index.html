@@ -2,40 +2,27 @@
 <html lang="vi">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebAR Markerless</title>
+    <!-- Thư viện model-viewer của Google -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
       body { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; }
-      model-viewer { width: 100%; height: 100%; background-color: #f3f4f6; }
-      .ar-button {
-        position: absolute;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        padding: 14px 28px;
-        background-color: #2563eb;
-        color: white;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        font-size: 16px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      }
+      model-viewer { width: 100%; height: 100%; }
     </style>
   </head>
   <body>
 
+    <!-- src="model.glb" là tên file 3D bạn upload lên GitHub -->
     <model-viewer 
-      src="indomidibo.glb" 
+      src="mosasaurus.glb" 
       ar 
       ar-modes="webxr scene-viewer quick-look" 
       camera-controls 
-      touch-action="pan-y"
-      shadow-intensity="1">
+      shadow-intensity="1"
+      alt="Mô hình 3D AR">
       
-      <button slot="ar-button" class="ar-button">
-        📷 Xem trong không gian thực (AR)
+      <button slot="ar-button" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); padding: 12px 24px; background: #2563eb; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 16px;">
+        Xem trong không gian thực (AR)
       </button>
 
     </model-viewer>
