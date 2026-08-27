@@ -3,24 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebAR Demo</title>
-    <!-- Import thư viện model-viewer -->
+    <title>WebAR Markerless Demo</title>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
     <style>
-      body { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: #ffffff; }
+      body { margin: 0; padding: 0; width: 100vw; height: 100vh; overflow: hidden; background-color: #f8fafc; }
       model-viewer { width: 100%; height: 100%; }
+      .ar-button {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 14px 24px;
+        background: #2563eb;
+        color: white;
+        border: none;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        z-index: 999;
+      }
     </style>
   </head>
   <body>
 
-    <!-- Thay model.glb bằng chính xác tên file 3D con quái vật của bạn trên GitHub -->
+    <!-- Điền chính xác tên file 3D của bạn ở cả 2 vị trí "src" và "intent" bên dưới -->
     <model-viewer 
       src="mosasaurus.glb" 
       ar 
       ar-modes="scene-viewer webxr quick-look" 
       camera-controls 
-      shadow-intensity="1"
-      alt="Mô hình AR 3D">
+      shadow-intensity="1">
+      
+      <!-- Ép mở ứng dụng Scene Viewer của Google khi bấm nút -->
+      <a slot="ar-button" class="ar-button" href="intent://arvr.google.com/scene-viewer/1.0?file=https://td228901-bit.github.io/webAR/mosasaurus.glb&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;end;">
+        📷 Xem AR trên sàn nhà
+      </a>
+
     </model-viewer>
 
   </body>
