@@ -26,12 +26,17 @@
   </head>
   <body>
 
+    <!-- Bổ sung autoplay, animation-name, camera-orbit và min-camera-orbit -->
     <model-viewer 
       src="indomidibo.glb" 
+      autoplay
+      animation-name="*"
       ar 
       ar-modes="webxr scene-viewer quick-look" 
       camera-controls 
       touch-action="pan-y"
+      camera-orbit="0deg 75deg 105%"
+      min-camera-orbit="auto auto 0m"
       shadow-intensity="1">
       
       <button slot="ar-button" class="ar-button">
