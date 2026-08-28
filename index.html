@@ -27,9 +27,8 @@
   <body>
 
     <!-- 
-      - ar-modes="scene-viewer webxr quick-look": Ưu tiên Scene Viewer của Google
-      - ar-placement="floor": Ép nhận diện mặt sàn/mặt bàn để ghim cố định
-      - ar-scale="fixed": Cố định kích thước thực tế, đi lại gần sẽ to ra, đi ra xa sẽ nhỏ lại
+      - ar-scale="auto": Cho phép tự do xòe/chụm 2 ngón tay để thu phóng trong AR
+      - scale="0.2 0.2 0.2": Thu nhỏ kích thước ban đầu xuống còn 20% so với bản gốc
     -->
     <model-viewer 
       src="indomidibo.glb" 
@@ -38,7 +37,8 @@
       ar 
       ar-modes="scene-viewer webxr quick-look" 
       ar-placement="floor"
-      ar-scale="fixed"
+      ar-scale="auto"
+      scale="0.2 0.2 0.2"
       camera-controls 
       touch-action="pan-y"
       camera-orbit="0deg 75deg 105%"
