@@ -26,13 +26,19 @@
   </head>
   <body>
 
-    <!-- Bổ sung autoplay, animation-name, camera-orbit và min-camera-orbit -->
+    <!-- 
+      - ar-modes="scene-viewer webxr quick-look": Ưu tiên Scene Viewer của Google
+      - ar-placement="floor": Ép nhận diện mặt sàn/mặt bàn để ghim cố định
+      - ar-scale="fixed": Cố định kích thước thực tế, đi lại gần sẽ to ra, đi ra xa sẽ nhỏ lại
+    -->
     <model-viewer 
-      src="indomidibo.glb" 
+      src="model.glb" 
       autoplay
       animation-name="*"
       ar 
-      ar-modes="webxr scene-viewer quick-look" 
+      ar-modes="scene-viewer webxr quick-look" 
+      ar-placement="floor"
+      ar-scale="fixed"
       camera-controls 
       touch-action="pan-y"
       camera-orbit="0deg 75deg 105%"
